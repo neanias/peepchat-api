@@ -1,0 +1,17 @@
+language: elixir
+elixir:
+- 1.5
+otp_release:
+- 20.0
+sudo: false
+addons:
+  postgresql: '9.4'
+before_script:
+- psql -c 'create database peepchat_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: Lg1aswtbi1tehTP4QPbJlXE7Iq8IyoxR2/0/cig6ix7UqtxuT/ZirbKncNDu2EvPa5sFRbcGk/wVjsAkc5WBO/VrwrZe1gAG2WQ+sJYCmzA459KzKahISncioli3F7FlpIgzgz/uyc8VkVGGK/KiXmCTXyr725/CCm5GxNheWHeJsnNBPjL/qLHj15JbGznQNsItCDK4+G0/yrgTG/ysQ7P8zU5gaefjlyrexfkfE4YdEaJ2qLYqsp0fOywgSQ4Z0NC2xVEI2F2Uwkh99kXzw81lZO51Uf9HR61cblHGbgHxM44hHWvEJ91RvKheqINaVp6gzV7XhhQxY9cWbgCYijHy9TjbemL2cnfRwpRnQloSZt3ULDTM9/QjgyHSOGhAU98XHgupofGy/lUFaWT+24GYbFfJKxG/8oXR8V63MXUD+V/ZJOG58wA4Jt7Uh/QXp+jyvVdpt9R1UMa7r6aMpEcnnVDwqCep07xO7UlyZS1+K0brxUGszp7aimFqdk+oOue29ZT01iN75BcERBQpeet3UcmYJGHVdeLvJLh8QBo1B6ovyhR4UhAw9WJfvEAxG50/RumQi7TkgZuSJb2NMnxGlQY3nyp0KyijfHDegv1xGUiUkRxsN3vF3pR5VM5pYqTtYwTryfd/5fymE5dXczti6LukM/edrhosabON/8E=
+  app: whispering-citadel-65891
+  on:
+    repo: neanias/peepchat-api
