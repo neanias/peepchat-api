@@ -14,7 +14,7 @@ use Mix.Config
 config :peepchat, Peepchat.Endpoint,
   http: [:inet6, port: {:system, "PORT"}],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
-  url: [host: "whispering-citadel-65891.herokuapp.com", port: 443],
+  url: [host: "evening-springs-26713.herokuapp.com", port: 443],
   secret_key_base: System.get_env("SECRET_KEY_BASE")
 
 config :peepchat, Peepchat.Repo,
